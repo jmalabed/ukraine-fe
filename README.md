@@ -12,7 +12,7 @@ During times of conflict, even the most developed nations can struggle accessing
 
 ### Values
 
-The core values include;
+The core values include:
 
 1. Compassion
 2. Education
@@ -23,4 +23,4 @@ The core values include;
 
 ## Methods
 
-Created with React
+Created with React.js.
