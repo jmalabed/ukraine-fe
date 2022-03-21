@@ -11,6 +11,7 @@ const Suggestions = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setInput("");
     console.log("submitting data! ", input);
   };
 
