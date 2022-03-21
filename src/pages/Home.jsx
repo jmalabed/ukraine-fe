@@ -19,15 +19,13 @@ const Home = (props) => {
         life and disability.
       </p>
       <h2>Values</h2>
-      <p>
-        The core values include:
-        <ul>
-          <li>Compassion</li>
-          <li>Education</li>
-          <li>Empowerment</li>
-          <li>Community</li>
-        </ul>
-      </p>
+      <p>The core values include:</p>
+      <ul>
+        <li>Compassion</li>
+        <li>Education</li>
+        <li>Empowerment</li>
+        <li>Community</li>
+      </ul>
       <h2>About</h2>
       <p>
         As medical professionals, we hold these values daily. Compassion for
