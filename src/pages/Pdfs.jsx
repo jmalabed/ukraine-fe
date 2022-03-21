@@ -6,6 +6,7 @@ const Pdfs = (props) => {
   return (
     <div>
       <h2>Primary Trauma Care Manual</h2>
+      <iframe src="{ptcCourseManual}" height="500px" width="350px"></iframe>
       <a href={ptcCourseManual} download target="_blank" rel="noreferrer">
         <Button variant="success">Download</Button>
       </a>
