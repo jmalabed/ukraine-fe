@@ -1,6 +1,9 @@
+import Person from "../components/Person";
+
 const AboutUs = (props) => {
   return (
     <div>
+      <Person></Person>
       <h1>Andy</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime

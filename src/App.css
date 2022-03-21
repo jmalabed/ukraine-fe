@@ -2,3 +2,13 @@
   text-decoration: none;
   color: black;
 }
+
+.aboutImg {
+  border-radius: 50%;
+}
+
+.divider {
+  color: black;
+  background-color: black;
+  height: 1px;
+}
