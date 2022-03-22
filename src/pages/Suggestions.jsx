@@ -2,34 +2,61 @@ import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
 const Suggestions = (props) => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState({ body: "" });
 
   const handleChange = (e) => {
-    console.log(e.target.name);
-    console.log(e.target.value);
+    setInput({ body: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setInput("");
-    console.log("submitting data! ", input);
+    makeSuggestion(input);
+    alert("Your suggestion has been received!");
+  };
+
+  const makeSuggestion = async (data) => {
+    try {
+      const configs = {
+        method: "POST",
+        headers: {
+          "Content-Type": "Application/json",
+        },
+        body: JSON.stringify(data),
+      };
+      const madeSuggestion = await fetch(
+        "http://localhost:9000/suggestion/",
+        configs
+      );
+      const parsedSuggestion = await madeSuggestion.json();
+      console.log(parsedSuggestion);
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setInput({ body: "" });
+    }
   };
 
   return (
     <div>
       <h1>Suggestions</h1>
       <p>Please share any suggestions for additional content below!</p>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Control
-            type="text"
-            name="input"
-            id="input"
-            onChange={handleChange}
-          ></Form.Control>
-        </Form.Group>
-        <Button type="submit">Submit!</Button>
-      </Form>
+      <div>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group>
+            <Form.Control
+              type="text"
+              name="input"
+              id="input"
+              onChange={handleChange}
+              value={input.body}
+              className="suggestion-box"
+            ></Form.Control>
+          </Form.Group>
+          <Button type="submit" className="mt-3">
+            Submit!
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 };

@@ -4,6 +4,9 @@
 }
 
 .aboutImg {
+  object-fit: cover;
+  height: 12em;
+  width: 12em;
   border-radius: 50%;
 }
 
@@ -11,4 +14,7 @@
   color: black;
   background-color: black;
   height: 1px;
+}
+
+.suggestion-box {
 }
