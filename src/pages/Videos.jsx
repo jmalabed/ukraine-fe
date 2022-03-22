@@ -6,7 +6,7 @@ const Videos = (props) => {
 
   const getVideos = async () => {
     try {
-      const allVideos = await fetch("http://localhost:9000/video");
+      const allVideos = await fetch("https://ukrainebe.herokuapp.com/video");
       const parsedVideos = await allVideos.json();
       console.log(parsedVideos);
       setVideos(parsedVideos);

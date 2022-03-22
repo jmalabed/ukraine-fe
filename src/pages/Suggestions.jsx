@@ -24,7 +24,7 @@ const Suggestions = (props) => {
         body: JSON.stringify(data),
       };
       const madeSuggestion = await fetch(
-        "http://localhost:9000/suggestion/",
+        "https://ukrainebe.herokuapp.com/suggestion/",
         configs
       );
       const parsedSuggestion = await madeSuggestion.json();

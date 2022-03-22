@@ -6,7 +6,9 @@ const AboutUs = (props) => {
 
   const getPeople = async () => {
     try {
-      const foundPeople = await fetch("http://localhost:9000/person/");
+      const foundPeople = await fetch(
+        "https://ukrainebe.herokuapp.com/person/"
+      );
       const parsedPeople = await foundPeople.json();
       console.log(parsedPeople);
       setPeople(parsedPeople);
