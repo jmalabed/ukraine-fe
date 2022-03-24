@@ -6,7 +6,7 @@ const English = (props) => {
     <div className="">
       <div className="d-flex flex-column justify-content-center">
         <a href="/" className="title d-flex justify-content-center">
-          <h1 className="center-text">Ukraine Healthcare Resources</h1>
+          <h1 className="center-text">Expeditionary Medical Group</h1>
         </a>
       </div>
       <NavigationBar />
