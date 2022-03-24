@@ -8,6 +8,7 @@ const NavigationBar = (props) => {
       <Link to="pdfs">Pdf's</Link>
       <Link to="suggest">Suggestions</Link>
       <Link to="aboutus">About Us</Link>
+      <Link to="donate">Donate</Link>
     </nav>
   );
 };

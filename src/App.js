@@ -8,6 +8,7 @@ import Videos from "./pages/Videos";
 import Pdfs from "./pages/Pdfs";
 import Suggestions from "./pages/Suggestions";
 import NotFound from "./pages/NotFound";
+import Donate from "./pages/Donate";
 import { Container } from "react-bootstrap";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="videos" element={<Videos />} />
             <Route path="pdfs" element={<Pdfs />} />
             <Route path="suggest" element={<Suggestions />} />
+            <Route path="donate" element={<Donate />} />
           </Route>
           <Route path="/:any" element={<NotFound />} />
         </Routes>
