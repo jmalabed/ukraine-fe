@@ -3,6 +3,12 @@
   color: black;
 }
 
+.emg-logo {
+  width: 50%;
+  height: 10%;
+  max-height: 45em;
+}
+
 .aboutImg {
   object-fit: cover;
   height: 12em;
