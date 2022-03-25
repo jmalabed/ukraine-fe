@@ -1,21 +1,24 @@
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 const PayPal = (props) => {
-  const options = {
-    style: {
-      layout: "horizontal",
-      color: "gold",
-      shape: "pill",
-      label: "paypal",
-      tagline: true,
-    },
+  const style = {
+    layout: "horizontal",
+    color: "gold",
+    shape: "pill",
+    label: "paypal",
+    tagline: true,
+  };
+  const initialOptions = {
     "client-id":
       "AVNWl_Aeq_fOYJCIJ52k571ffit4cXHRPvNl2YifNKFS63Zu_gaoHNDq2xu18EVTVMKWux_xlXmh3hGf",
+    currency: "USD",
+    intent: "capture",
+    "data-client-token": "abc123xyz==",
   };
   return (
     <div>
-      <PayPalScriptProvider options={{ "client-id": options["client-id"] }}>
-        <PayPalButtons style={options.style} />
+      <PayPalScriptProvider options={initialOptions}>
+        <PayPalButtons style={style} />
       </PayPalScriptProvider>
       <form action="https://www.paypal.com/donate" method="post" target="_top">
         <input type="hidden" name="hosted_button_id" value="7VCSU9UDZGATJ" />
