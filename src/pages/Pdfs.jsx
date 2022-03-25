@@ -1,4 +1,4 @@
-import ptcCourseManual from "../documents/english/PTC-Course-Manual-2018.pdf";
+import ptcCourseManual from "../resources/english/PTC-Course-Manual-2018.pdf";
 
 import { Button } from "react-bootstrap";
 
