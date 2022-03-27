@@ -28,7 +28,6 @@ const Suggestions = (props) => {
         configs
       );
       const parsedSuggestion = await madeSuggestion.json();
-      console.log(parsedSuggestion);
     } catch (e) {
       console.log(e);
     } finally {

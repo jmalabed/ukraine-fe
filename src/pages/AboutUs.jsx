@@ -10,7 +10,6 @@ const AboutUs = (props) => {
         "https://ukrainebe.herokuapp.com/person/"
       );
       const parsedPeople = await foundPeople.json();
-      console.log(parsedPeople);
       setPeople(parsedPeople);
     } catch (e) {
       console.log(e);

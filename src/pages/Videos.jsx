@@ -8,7 +8,6 @@ const Videos = (props) => {
     try {
       const allVideos = await fetch("https://ukrainebe.herokuapp.com/video");
       const parsedVideos = await allVideos.json();
-      console.log(parsedVideos);
       setVideos(parsedVideos);
     } catch (e) {
       console.log(e);
