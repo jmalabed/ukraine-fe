@@ -5,7 +5,7 @@ const NavigationBar = (props) => {
   const links = [
     ["videos", "Videos"],
     ["pdfs", "PDF's"],
-    ["slides", "Course Slides"],
+    ["slides", "Slides"],
     ["suggest", "Suggestions"],
     ["aboutus", "About Us"],
     ["donate", "Donate"],

@@ -25,7 +25,7 @@ const AboutUs = (props) => {
     ))
   ) : (
     <div>
-      <p>no people loaded yet</p>
+      <p>no people loaded yet :(</p>
     </div>
   );
 
@@ -35,7 +35,7 @@ const AboutUs = (props) => {
 
   return (
     <div>
-      <h1>About Us</h1>
+      <h1 className="header">About Us</h1>
       <h2>
         ** There is a{" "}
         <a

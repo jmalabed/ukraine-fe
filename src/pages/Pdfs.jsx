@@ -6,7 +6,7 @@ const Pdfs = (props) => {
   return (
     <div className="d-flex flex-column align-items-center">
       <div className="d-flex flex-row justify-content-between align-items-bottom my-3">
-        <h2 className="">Primary Trauma Care Manual</h2>
+        <h1 className="">Primary Trauma Care Manual</h1>
         <a
           href={ptcCourseManual}
           download="PTC_Manual"

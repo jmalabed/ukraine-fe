@@ -1,11 +1,12 @@
+import EMGLogo from "../resources/english/EMG-logo.png";
 import { Button } from "react-bootstrap";
 
 const Landing = (props) => {
   return (
     <div>
-      <h1 className="text-center">Expeditionary Medical Group</h1>
-      <h2 className="text-center">Choose your language below:</h2>
       <div className="d-flex flex-column align-items-center">
+        <img src={EMGLogo} className="emg-logo mt-3 mb-5"></img>
+        <h2 className="text-center">Choose your language below:</h2>
         <a href="/english" className="p-3">
           <Button>English</Button>
         </a>

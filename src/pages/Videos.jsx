@@ -45,7 +45,7 @@ const Videos = (props) => {
 
   return (
     <div>
-      <h1>Videos</h1>
+      <h1 className="header">Videos</h1>
       {vidList}
     </div>
   );

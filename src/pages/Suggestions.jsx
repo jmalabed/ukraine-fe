@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Card, Form } from "react-bootstrap";
 
 const Suggestions = (props) => {
   const [input, setInput] = useState({ body: "" });
@@ -37,25 +37,29 @@ const Suggestions = (props) => {
 
   return (
     <div>
-      <h1>Suggestions</h1>
-      <p>Please share any suggestions for additional content below!</p>
-      <div>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group>
-            <Form.Control
-              type="text"
-              name="input"
-              id="input"
-              onChange={handleChange}
-              value={input.body}
-              className="suggestion-box"
-            ></Form.Control>
-          </Form.Group>
-          <Button type="submit" className="mt-3">
-            Submit!
-          </Button>
-        </Form>
-      </div>
+      <h1 className="header">Suggestions</h1>
+      <Card className="p-5 ">
+        <p className="mb-5">
+          Please share any suggestions for additional content below!
+        </p>
+        <div>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group>
+              <Form.Control
+                type="text"
+                name="input"
+                id="input"
+                onChange={handleChange}
+                value={input.body}
+                className="suggestion-box"
+              ></Form.Control>
+            </Form.Group>
+            <Button type="submit" className="mt-3">
+              Submit!
+            </Button>
+          </Form>
+        </div>
+      </Card>
     </div>
   );
 };
