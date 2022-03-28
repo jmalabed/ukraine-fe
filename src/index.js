@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const initialOptions = {
   "client-id":
-    "AUPeNoXci3KJq-FMVBtyB4kfzOBFuuDASwLATHBH0kIX6LjtBncQ_LFKu-kDyKoNv9xezKkZf2QAgfV_",
+    "AXZbDkVWvEmbxUhhmINcRDkoIU-_bB3CzL0CA_0_On7vUtGCJIWxX0cd3kEYpughAna217jSoOyPfof8",
   currency: "USD",
   intent: "capture",
 };

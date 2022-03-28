@@ -7,11 +7,8 @@ import { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 
 const PayPal = (props) => {
+  const [amount, setAmount] = useState();
   const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
-  const [currency, setCurrency] = useState(options.currency);
-
-  // This values are the props in the UI
-  const amount = "100";
 
   const style = {
     layout: "horizontal",
@@ -20,41 +17,37 @@ const PayPal = (props) => {
     label: "paypal",
     tagline: true,
   };
-  const initialOptions = {
-    "client-id":
-      "AUPeNoXci3KJq-FMVBtyB4kfzOBFuuDASwLATHBH0kIX6LjtBncQ_LFKu-kDyKoNv9xezKkZf2QAgfV_",
-    currency: "USD",
-    intent: "capture",
+
+  const handleChange = (e) => {
+    setAmount(e.target.value);
+    if (e.target.value < 0) {
+      alert("Please enter a value greater than 0.");
+      setAmount();
+    }
+    if (e.target.value * 100 !== Math.floor(e.target.value * 100)) {
+      alert("We have rounded your donation down to the nearest cent.");
+      setAmount(Math.floor(e.target.value * 100) / 100);
+    }
   };
-
-  function onCurrencyChange({ target: { value } }) {
-    setCurrency(value);
-    dispatch({
-      type: "resetOptions",
-      value: {
-        ...options,
-        currency: "USD",
-      },
-    });
-  }
-
-  useEffect(() => {
-    dispatch({
-      type: "resetOptions",
-      value: {
-        ...options,
-        currency: currency,
-      },
-    });
-  }, [currency, showSpinner]);
 
   return (
     <div>
-      {showSpinner && isPending && <div className="spinner" />}
+      <Form onSubmit={(e) => e.preventDefault()} className="d-flex mb-3">
+        <Form.Label htmlFor="amount" className="pt-2">
+          $
+        </Form.Label>
+        <Form.Control
+          onChange={handleChange}
+          value={amount}
+          type="number"
+          id="amount"
+          name="amount"
+        />
+      </Form>
       <PayPalButtons
         style={style}
         disabled={false}
-        forceReRender={[amount, currency, style]}
+        forceReRender={[amount, style]}
         fundingSource={undefined}
         createOrder={(data, actions) => {
           return actions.order
@@ -62,7 +55,7 @@ const PayPal = (props) => {
               purchase_units: [
                 {
                   amount: {
-                    currency_code: currency,
+                    currency_code: "USD",
                     value: amount,
                   },
                 },
