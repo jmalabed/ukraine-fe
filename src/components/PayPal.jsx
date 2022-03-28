@@ -1,6 +1,15 @@
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import {
+  PayPalScriptProvider,
+  usePayPalScriptReducer,
+  PayPalButtons,
+} from "@paypal/react-paypal-js";
+import { useState, useEffect } from "react";
+import { Button, Form } from "react-bootstrap";
 
 const PayPal = (props) => {
+  const [amount, setAmount] = useState();
+  const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
+
   const style = {
     layout: "horizontal",
     color: "gold",
@@ -8,17 +17,60 @@ const PayPal = (props) => {
     label: "paypal",
     tagline: true,
   };
-  const initialOptions = {
-    "client-id":
-      "AVNWl_Aeq_fOYJCIJ52k571ffit4cXHRPvNl2YifNKFS63Zu_gaoHNDq2xu18EVTVMKWux_xlXmh3hGf",
-    currency: "USD",
-    intent: "capture",
+
+  const handleChange = (e) => {
+    setAmount(e.target.value);
+    if (e.target.value < 0) {
+      alert("Please enter a value greater than 0.");
+      setAmount();
+    }
+    if (e.target.value * 100 !== Math.floor(e.target.value * 100)) {
+      alert("We have rounded your donation down to the nearest cent.");
+      setAmount(Math.floor(e.target.value * 100) / 100);
+    }
   };
+
   return (
     <div>
-      <PayPalScriptProvider options={initialOptions}>
-        <PayPalButtons style={style} />
-      </PayPalScriptProvider>
+      <Form onSubmit={(e) => e.preventDefault()} className="d-flex mb-3">
+        <Form.Label htmlFor="amount" className="pt-2">
+          $
+        </Form.Label>
+        <Form.Control
+          onChange={handleChange}
+          value={amount}
+          type="number"
+          id="amount"
+          name="amount"
+        />
+      </Form>
+      <PayPalButtons
+        style={style}
+        disabled={false}
+        forceReRender={[amount, style]}
+        fundingSource={undefined}
+        createOrder={(data, actions) => {
+          return actions.order
+            .create({
+              purchase_units: [
+                {
+                  amount: {
+                    currency_code: "USD",
+                    value: amount,
+                  },
+                },
+              ],
+            })
+            .then((orderId) => {
+              return orderId;
+            });
+        }}
+        onApprove={function (data, actions) {
+          return actions.order.capture().then(function () {
+            alert("Order completed!");
+          });
+        }}
+      />
     </div>
   );
 };
