@@ -8,6 +8,7 @@ const Pdfs = (props) => {
       <div className="d-flex flex-row justify-content-between align-items-bottom my-3">
         <h1 className="">Primary Trauma Care Manual</h1>
         <a
+          className="d-flex align-items-center"
           href={ptcCourseManual}
           download="PTC_Manual"
           target="_blank"
@@ -20,9 +21,8 @@ const Pdfs = (props) => {
       </div>
       <div className="mw-100 w-100 d-flex flex-column align-items-center ">
         <iframe
+          className="pdf-frame"
           src={ptcCourseManual}
-          height="750vh"
-          width="50%"
           title="Patient Trauma Care"
         />
       </div>

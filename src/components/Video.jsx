@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 const Video = (props) => {
   return (
-    <div>
+    <>
       {props.title && (
         <>
           <h2>{props.title}</h2>
@@ -11,7 +11,7 @@ const Video = (props) => {
           <p>Short description possibly located here</p>
         </>
       )}
-    </div>
+    </>
   );
 };
 

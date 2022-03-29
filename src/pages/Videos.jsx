@@ -21,12 +21,12 @@ const Videos = (props) => {
   const vidList =
     videos.length > 0 ? (
       videos.map((vid) => (
-        <div>
+        <>
           <Video title={vid.title} url={vid.url} />
-        </div>
+        </>
       ))
     ) : (
-      <div>
+      <>
         <p>No videos loaded :(</p>
         <p>
           Please add the finished URL's to the{" "}
@@ -40,13 +40,14 @@ const Videos = (props) => {
           .
         </p>
         <Video />
-      </div>
+      </>
     );
 
   return (
     <div>
-      <h1 className="header">Videos</h1>
+      <h1 className="header d-flex">Videos</h1>
       {vidList}
+      <Video />
     </div>
   );
 };
