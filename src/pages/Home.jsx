@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, Col, Row } from "react-bootstrap";
 
 const Home = (props) => {
@@ -5,13 +6,13 @@ const Home = (props) => {
     <div>
       <p className="m-3 p-3">
         EMG is here to help people that require medical attention due to
-        traumatic injury and do not have access to proper care. Please view our
-        primary trauma care manual under PDF's and our procedural videos under
-        Videos for our resources.
+        traumatic injury and do not have access to proper care. Please view our{" "}
+        <Link to="pdfs">primary trauma care manual</Link> and our{" "}
+        <Link to="videos">procedural video</Link> resources.
       </p>
-      <Row>
-        <Col className="d-flex ">
-          <Card className="p-3 w-100">
+      <div className="mobile-row">
+        <div className="d-flex card-width">
+          <Card className="p-3 m-3 w-100">
             <h2 className="text-center">Mission</h2>
             <p>
               Our mission is to promote and empower medical professionals’
@@ -21,9 +22,9 @@ const Home = (props) => {
               and disabilities are reduced.
             </p>
           </Card>
-        </Col>
-        <Col className="d-flex">
-          <Card className="p-3 w-100">
+        </div>
+        <div className="d-flex card-width">
+          <Card className="p-3 m-3 w-100">
             <h2 className="text-center">Values</h2>
             <ul className="mt-3">
               <li className="mb-3">Compassion</li>
@@ -32,9 +33,9 @@ const Home = (props) => {
               <li className="mb-3">Community</li>
             </ul>
           </Card>
-        </Col>
-        <Col className="d-flex">
-          <Card className="p-3 w-100">
+        </div>
+        <div className="d-flex card-width">
+          <Card className="p-3 m-3 w-100">
             <h2 className="text-center">Vision</h2>
             <p>
               During times of conflict, even the most developed nations can
@@ -47,8 +48,8 @@ const Home = (props) => {
               disability.
             </p>
           </Card>
-        </Col>
-      </Row>
+        </div>
+      </div>
       <h2 className="mt-3 mx-3 p-3">About</h2>
 
       <p className="mb-3 mx-3 p-3">

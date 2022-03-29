@@ -4,8 +4,7 @@ const YoutubeEmbed = (props) => {
   return (
     <div>
       <iframe
-        width="853"
-        height="480"
+        className="video-frame"
         src={`https://www.youtube.com/embed/${props.embedId}`}
         frameBorder="0"
         allow="accelerometer; encrypted-media"
