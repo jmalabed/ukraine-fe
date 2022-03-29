@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 const NavigationBar = (props) => {
   const links = [
-    ["videos", "Videos"],
-    ["pdfs", "PDF's"],
-    ["slides", "Slides"],
     ["suggest", "Suggestions"],
     ["aboutus", "About Us"],
     ["donate", "Donate"],
@@ -32,7 +29,31 @@ const NavigationBar = (props) => {
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">{genNav()}</Navbar.Collapse>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <NavDropdown
+            title="Resources"
+            id="nav-dropdown"
+            className="nav-link-css"
+            active={false}
+          >
+            <NavDropdown.Item>
+              <Link to="videos" className="nav-link">
+                <p className="nav-link-css">Videos</p>
+              </Link>
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              <Link to="pdfs" className="nav-link">
+                <p className="nav-link-css">PDF's</p>
+              </Link>
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              <Link to="slides" className="nav-link">
+                <p className="nav-link-css">Slideshow</p>
+              </Link>
+            </NavDropdown.Item>
+          </NavDropdown>
+          {genNav()}
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

@@ -40,3 +40,52 @@
   margin-top: 1em;
   margin-bottom: 1.5em;
 }
+
+.mobile-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-width {
+  width: 33%;
+}
+
+.video-frame {
+  width: 80%;
+  height: 40vw;
+}
+
+.pdf-frame {
+  width: 90%;
+  height: 65vw;
+  margin-bottom: 2rem;
+}
+
+.isMobile-about {
+  display: none;
+}
+
+.isDesktop-about {
+  display: contents;
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-width {
+    width: 100%;
+  }
+
+  .isMobile-about {
+    display: contents;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+
+  .isDesktop-about {
+    display: none;
+  }
+}
