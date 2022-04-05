@@ -30,6 +30,28 @@ const PayPal = (props) => {
     }
   };
 
+  const makeDonation = async () => {
+    try {
+      const configs = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ amount }),
+      };
+
+      const donate = await fetch(
+        "https://ukrainebe.herokuapp.com/donation/",
+        configs
+      );
+      const parsedDonate = await donate.json();
+      console.log(parsedDonate);
+      props.setDonations(props.donations + parsedDonate);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <div>
       <Form onSubmit={(e) => e.preventDefault()} className="d-flex mb-3">
@@ -67,6 +89,7 @@ const PayPal = (props) => {
         }}
         onApprove={function (data, actions) {
           return actions.order.capture().then(function () {
+            makeDonation();
             alert("Order completed!");
           });
         }}

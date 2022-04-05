@@ -7,7 +7,7 @@ const Video = (props) => {
       {props.title && (
         <>
           <h2>{props.title}</h2>
-          <YoutubeEmbed embedId={props.embedId} />
+          <YoutubeEmbed embedId={props.url} />
           <p>Short description possibly located here</p>
         </>
       )}
