@@ -17,8 +17,8 @@ const AboutUs = (props) => {
   };
 
   const list = people ? (
-    people.map((person) => (
-      <div>
+    people.map((person, idx) => (
+      <div key={idx}>
         <Person person={person} />
         <hr className="divider" />
       </div>

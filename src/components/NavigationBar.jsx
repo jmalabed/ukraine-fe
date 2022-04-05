@@ -11,8 +11,8 @@ const NavigationBar = (props) => {
   const genNav = () => {
     return (
       <Nav className="me-auto">
-        {links.map((link) => (
-          <Link to={link[0]} className="nav-link">
+        {links.map((link, idx) => (
+          <Link key={idx} to={link[0]} className="nav-link">
             <p className="nav-link-css">{link[1]}</p>
           </Link>
         ))}
