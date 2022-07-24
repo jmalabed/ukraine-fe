@@ -23,6 +23,7 @@ function App() {
             <Route path="aboutus" element={<AboutUs />} />
             <Route path="videos" element={<Videos />} />
             <Route path="pdfs" element={<Pdfs />} />
+            <Route path="pdfs/:language" element={<Pdfs />} />
             <Route path="slides" element={<Slides />} />
             <Route path="suggest" element={<Suggestions />} />
             <Route path="donate" element={<Donate />} />
